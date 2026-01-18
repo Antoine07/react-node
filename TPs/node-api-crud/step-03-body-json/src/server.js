@@ -1,0 +1,34 @@
+import http from "node:http";
+import { createRouter } from "./router.js";
+import { HttpError, readJsonBody, sendJson } from "./utils/http.js";
+
+const PORT = process.env.PORT ?? 3000;
+
+const router = createRouter();
+
+router.add("GET", "/health", (req, res) => {
+  sendJson(res, 200, { ok: true });
+});
+
+router.add("POST", "/echo", async (req, res) => {
+  const body = await readJsonBody(req);
+  sendJson(res, 200, { received: body });
+});
+
+const server = http.createServer(async (req, res) => {
+  try {
+    const handled = await router.handle(req, res);
+    if (!handled) sendJson(res, 404, { error: "Not found" });
+  } catch (error) {
+    if (error instanceof HttpError) {
+      return sendJson(res, error.statusCode, error.publicBody);
+    }
+    console.error(error);
+    sendJson(res, 500, { error: "Internal server error" });
+  }
+});
+
+server.listen(PORT, () => {
+  console.log(`Server listening on http://localhost:${PORT}`);
+});
+
