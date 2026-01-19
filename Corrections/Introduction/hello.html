@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React sans JSX</title>
+    <style>
+        .container {
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <!-- React et ReactDOM via CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+
+    <script>
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+
+        // Création d'éléments React sans JSX
+        const title = React.createElement("h1", null, "Affichez HELLO WORLD dans un fichier HTML.");
+
+        const paragraph = React.createElement("p", null,
+            "Le Virtual DOM est une copie du DOM en mémoire que React utilise pour préparer les changements sans toucher directement à la page." +
+            "Il compare les différences et met à jour uniquement ce qui a changé, pour un rendu rapide et efficace.");
+
+        const app = React.createElement("div", { className: "container" }, [title, paragraph]);
+
+
+        root.render(app); // on monte ici dans le DOM 
+    </script>
+</body>
+
+</html>
