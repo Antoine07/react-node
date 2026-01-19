@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React avec JSX – ProfileCard</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        img {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>React avec JSX</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        /**
+            props <=> { name : "ALice", role : "student" }  => props.name props.role
+        */
+
+        function ProductCard(props){
+
+            return (
+                <div className="card">
+                    <img src={props.src} width="80" height="80"/>
+                    <h3>{props.name}</h3> 
+                    <p>Price:{props.price} €</p>
+                </div>
+            )
+        }
+
+        function App() {
+
+            return (
+                <div>
+                    <ProductCard src="https://placehold.co/80x80" name="apple" price={0.9} />
+                    <ProductCard src="https://placehold.co/80x80" name="orange" price={1.9} />
+                    <ProductCard src="https://placehold.co/80x80" name="cerise" price={0.75} />
+                    <ProductCard src="https://placehold.co/80x80" name="banane" price={0.55} />
+                </div>
+            )
+        }
+
+        // Rendu dans le DOM
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
