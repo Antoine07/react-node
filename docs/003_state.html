@@ -25,7 +25,7 @@
 <p><a href="https://antoine07.github.io/react-node/">Plan du cours</a></p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="3" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="3" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="1-introduction">1. Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <h3 id="d%C3%A9finition">Définition</h3>
 <p>Le <strong>state</strong> représente les <strong>données internes</strong> d'un composant React.<br />
 Contrairement aux <strong>props</strong> (données <em>reçues</em> du parent), le state correspond à des <strong>valeurs que le composant gère lui-même</strong>, susceptibles d'évoluer dans le temps.</p>
@@ -34,7 +34,7 @@ Contrairement aux <strong>props</strong> (données <em>reçues</em> du parent), 
 </blockquote>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="4" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="4" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="2-diff%C3%A9rence-entre-props-et-state">2. Différence entre props et state</h2>
+<h2 id="diff%C3%A9rence-entre-props-et-state">Différence entre props et state</h2>
 <table>
 <thead>
 <tr>
@@ -68,7 +68,7 @@ Contrairement aux <strong>props</strong> (données <em>reçues</em> du parent), 
 </table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="5" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="5" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="3-notions-de-base-sur-les-hooks">3. Notions de base sur les Hooks</h2>
+<h2 id="notions-de-base-sur-les-hooks">Notions de base sur les Hooks</h2>
 <p>Les <strong>Hooks</strong> sont des <strong>fonctions spéciales de React</strong> qui permettent d'ajouter des fonctionnalités avancées aux <strong>composants fonctionnels</strong> (gestion d'état, effets, contexte…).<br />
 Ils ont été introduits pour remplacer les anciens <strong>composants de classe</strong> et rendre le code plus simple et réutilisable.</p>
 </section>
@@ -79,7 +79,7 @@ Ils ont été introduits pour remplacer les anciens <strong>composants de classe
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="7" data-marpit-fragments="3" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="7" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="4-le-hook-usestate">4. Le hook <code>useState()</code></h2>
+<h2 id="le-hook-usestate">Le hook <code>useState()</code></h2>
 <p>React fournit le <strong>hook</strong> <code>useState()</code> pour créer et gérer une variable d'état.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">const</span> [state, setState] = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useState</span>(valeurInitiale);
 </code></pre>
@@ -90,7 +90,7 @@ Ils ont été introduits pour remplacer les anciens <strong>composants de classe
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="8" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="8" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="5-exemple-simple--compteur">5. Exemple simple : compteur</h2>
+<h2 id="exemple-simple--compteur">Exemple simple : compteur</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Counter</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">const</span> [count, setCount] = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>);
 
@@ -122,7 +122,7 @@ root.<span class="hljs-title function_">render</span>(<span class="language-xml"
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="11" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="6-r%C3%A8gles-dutilisation-des-hooks">6. Règles d'utilisation des Hooks</h2>
+<h2 id="r%C3%A8gles-dutilisation-des-hooks">Règles d'utilisation des Hooks</h2>
 <ol>
 <li>Toujours appeler <code>useState()</code> <strong>au niveau supérieur</strong> du composant (jamais dans une boucle ou une condition).</li>
 <li>Un hook ne doit être appelé <strong>que dans un composant fonctionnel</strong> ou un <strong>hook personnalisé</strong>.</li>
@@ -130,7 +130,7 @@ root.<span class="hljs-title function_">render</span>(<span class="language-xml"
 </ol>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="12" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="7-exercice--compteur">7. Exercice — compteur</h2>
+<h2 id="exercice--compteur">Exercice — compteur</h2>
 <p>Créer un composant <code>Counter</code> avec trois boutons :</p>
 <p>Incrémenter<br />
 Décrémenter<br />
@@ -138,7 +138,7 @@ Réinitialiser</p>
 <p><strong>Bonus :</strong> empêcher le compteur de descendre sous 0.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="13" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="13" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="8-exemple--champ-de-saisie-contr%C3%B4l%C3%A9">8. Exemple — champ de saisie contrôlé</h2>
+<h2 id="exemple--champ-de-saisie-contr%C3%B4l%C3%A9">Exemple — champ de saisie contrôlé</h2>
 <p>Un <strong>composant contrôlé</strong> garde la valeur d'un input dans le state.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">NameInput</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">const</span> [name, setName] = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useState</span>(<span class="hljs-string">&quot;&quot;</span>);
@@ -166,7 +166,7 @@ Réinitialiser</p>
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="15" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="15" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="9-exercice--formulaire-simple">9. Exercice — Formulaire simple</h2>
+<h2 id="exercice--formulaire-simple">Exercice — Formulaire simple</h2>
 <p>Créer un composant <code>LoginForm</code> :</p>
 <ol>
 <li>deux champs (<code>email</code>, <code>password</code>) contrôlés par le state,</li>
@@ -179,12 +179,12 @@ Réinitialiser</p>
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="16" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="16" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="10-exercice--todo-list">10. Exercice — ToDo List</h2>
+<h2 id="exercice--todo-list">Exercice — ToDo List</h2>
 <p>Créer une petite <strong>ToDo List</strong> :</p>
 <img src="./images/todoList.png" alt="Todo List" width="500" />
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="17" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="17" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="11-gestion-d%C3%A9tat-et-r%C3%A9activit%C3%A9">11. Gestion d'état et réactivité</h2>
+<h2 id="gestion-d%C3%A9tat-et-r%C3%A9activit%C3%A9">Gestion d'état et réactivité</h2>
 <p>React ne met pas le state à jour <strong>immédiatement</strong>.<br />
 Les mises à jour sont <strong>planifiées</strong> et peuvent être regroupées avant le re-render.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-title function_">setCount</span>(count + <span class="hljs-number">1</span>);
@@ -198,7 +198,7 @@ Les mises à jour sont <strong>planifiées</strong> et peuvent être regroupées
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="18" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="18" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="12-communication-parent--enfant-avec-state">12. Communication parent / enfant avec state</h2>
+<h2 id="communication-parent--enfant-avec-state">Communication parent / enfant avec state</h2>
 <p>Le parent peut gérer un state et le <strong>transmettre à un enfant via des props</strong> :</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Child</span>(<span class="hljs-params">{ value, onIncrement }</span>) {
   <span class="hljs-keyword">return</span> <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{onIncrement}</span>&gt;</span>Count: {value}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>;
@@ -213,7 +213,7 @@ Les mises à jour sont <strong>planifiées</strong> et peuvent être regroupées
 C'est le <strong>flux unidirectionnel</strong> de React : <em>props → state → events</em>.</p>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="19" data-marpit-fragments="6" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="19" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="13-bonnes-pratiques-sur-le-state">13. Bonnes pratiques sur le state</h2>
+<h2 id="bonnes-pratiques-sur-le-state">Bonnes pratiques sur le state</h2>
 <p><strong>À faire :</strong></p>
 <ul>
 <li data-marpit-fragment="1">
@@ -244,7 +244,7 @@ C'est le <strong>flux unidirectionnel</strong> de React : <em>props → state �
 </ul>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="20" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="20" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="14-%C3%A0-retenir">14. À retenir</h2>
+<h2 id="%C3%A0-retenir">À retenir</h2>
 <table>
 <thead>
 <tr>
@@ -277,7 +277,7 @@ C'est le <strong>flux unidirectionnel</strong> de React : <em>props → state �
 </table>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="21" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="21" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h2 id="15-les-mises-%C3%A0-jour-immuables">15. Les mises à jour immuables</h2>
+<h2 id="les-mises-%C3%A0-jour-immuables">Les mises à jour immuables</h2>
 <h3 id="principe">Principe</h3>
 <p>En React, on <strong>ne modifie jamais directement</strong> une donnée (objet, tableau) contenue dans un <code>state</code> ou une <code>prop</code>.<br />
 On crée <strong>une nouvelle version</strong> avec les modifications souhaitées.</p>
@@ -314,7 +314,7 @@ numbers.<span class="hljs-title function_">push</span>(<span class="hljs-number"
 </code></pre>
 </section>
 </foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="25" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="25" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="26">
-<h3 id="%C3%A0-retenir">À retenir</h3>
+<h3 id="%C3%A0-retenir-1">À retenir</h3>
 <p>Une &quot;immutable update&quot; = créer une <strong>nouvelle copie modifiée</strong><br />
 au lieu de modifier directement la valeur d'origine.<br />
 Cela permet à React de détecter le changement et de <strong>re-render correctement</strong> le composant.</p>

@@ -122,7 +122,7 @@ parfait pour initialiser un timer, un fetch ou un listener.</p>
 </code></pre>
 <p><code>useEffect</code> sert à gérer des <strong>effets secondaires</strong> (réseau, timers, subscriptions…).</p>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-marpit-fragments="3" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="11" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="22">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="11" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="11" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="22">
 <h2 id="5-exemple-1--effet-simple-avec-consolelog">5. Exemple 1 — Effet simple avec console.log</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-jsx"><span class="hljs-keyword">function</span> <span class="hljs-title function_">Counter</span>(<span class="hljs-params"></span>) {
   <span class="hljs-keyword">const</span> [count, setCount] = <span class="hljs-title class_">React</span>.<span class="hljs-title function_">useState</span>(<span class="hljs-number">0</span>);
@@ -141,28 +141,28 @@ parfait pour initialiser un timer, un fetch ou un listener.</p>
 </code></pre>
 <p>Chaque clic :</p>
 <ul>
-<li data-marpit-fragment="1">modifie le <code>state</code>,</li>
-<li data-marpit-fragment="2">provoque un <strong>re-render</strong>,</li>
-<li data-marpit-fragment="3">relance le <code>useEffect</code> car <code>count</code> a changé.</li>
+<li>modifie le <code>state</code>,</li>
+<li>provoque un <strong>re-render</strong>,</li>
+<li>relance le <code>useEffect</code> car <code>count</code> a changé.</li>
 </ul>
 </section>
-</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-marpit-fragments="4" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="12" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="22">
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 1280 720"><foreignObject width="1280" height="720"><section id="12" data-paginate="true" data-class="lead" data-theme="default" lang="en-US" class="lead" data-marpit-pagination="12" style="--paginate:true;--class:lead;--theme:default;" data-marpit-pagination-total="22">
 <h1 id="exercice-1--toggle-avec-compteur-deffets"><strong>Exercice 1 — Toggle avec compteur d'effets</strong></h1>
 <ul>
-<li data-marpit-fragment="1">
+<li>
 <p>Utiliser <strong>2 états distincts</strong> :</p>
 <ol>
 <li><code>isActive</code> → pour activer / désactiver un état logique.</li>
 <li><code>counter</code> → compteur d'exécutions de l'effet.</li>
 </ol>
 </li>
-<li data-marpit-fragment="2">
+<li>
 <p>Utiliser un <code>useEffect()</code> dépendant de <code>isActive</code>.</p>
 </li>
-<li data-marpit-fragment="3">
+<li>
 <p>À chaque changement de <code>isActive</code>, incrémenter <code>counter</code>.</p>
 </li>
-<li data-marpit-fragment="4">
+<li>
 <p>Afficher le nombre de fois que l'effet a été déclenché.</p>
 </li>
 </ul>
