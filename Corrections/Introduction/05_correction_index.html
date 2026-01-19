@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calcul de moyenne – React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      table {
+        border-collapse: collapse;
+        margin-top: 10px;
+        width: 300px;
+      }
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: center;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      .average {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Calcul de la moyenne des étudiants</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const students = [
+        { name: "Alice", grade: 15 },
+        { name: "Bob", grade: 12 },
+        { name: "Charlie", grade: 18 },
+        { name: "Diana", grade: 14 },
+      ];
+
+      function StudentAverage() {
+        // Calcul de la moyenne
+        const total = students.reduce((sum, student) => sum + student.grade, 0); // somme des valeurs 
+        const average = (total / students.length).toFixed(2); // chaine de caractères 
+
+        return (
+          <div>
+            <table>
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Note</th>
+                </tr>
+              </thead>
+              <tbody>
+                {students.map((student, index) => (
+                  <tr key={index}>
+                    <td>{student.name}</td>
+                    <td>{student.grade}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <p className="average">Moyenne de la classe : {average}</p>
+          </div>
+        );
+      }
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<StudentAverage />);
+    </script>
+  </body>
+</html>
