@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composition de composants – React</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    function Btn(props){
+        const [count, setCount] = React.useState(0);
+        const [count2, setCount2] = React.useState(0);
+
+        const handleClick = e => {
+            setCount(count + props.step);
+        }
+
+        const handleClick2 = e => {
+            setCount(count2 + 1);
+        }
+
+        React.useEffect(() => {
+            console.log(Math.random())
+        }, [count]) ; // ce tableau permet de surveiller les changements des states passés dans le tableau 
+
+        return (
+            <React.Fragment>
+                <p>Counter : {count} </p>
+                <p>Counter : {count2} </p>
+                <p><button onClick={handleClick}>+{props.step}</button></p>
+                <p><button onClick={handleClick2}>+1</button></p>
+            </React.Fragment>
+        )
+    }
+
+    function App() {
+
+      return (
+        <div className="container">
+            <Btn step={2} />
+        </div>
+      );
+    }
+
+    // Rendu final
+    const root = ReactDOM.createRoot(document.getElementById("root")); // 
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
