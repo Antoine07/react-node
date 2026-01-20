@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composition de composants – React</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    /**
+      Créez un champ pour récupérer des valeurs numériques, 
+      Stocker ces valeurs dans un tableau, ajouter un bouton pour enregistrer la valeur
+      Puis créer un dernier bouton pour afficher l'ensemble des valeurs stocker
+    **/
+
+    function App() {
+      const [number, setNumber] = React.useState("");
+      const [numbers, setNumbers] = React.useState([]);
+      const [status, setStatus] = React.useState(false);
+
+      const handleChange = e => {
+        setNumber(e.target.value);
+      }
+
+      const handleSave = e => {
+        if (number.trim() == "") return; // message d'erreur 
+        const n = Number(number); // caster un nombre le transformer en numérique 
+        if (Number.isNaN(n)) return;
+        numbers.push(n);
+        setNumbers(numbers);
+        setNumber("");
+      }
+
+      const handleShow = e => {
+        setStatus(!status) ;
+      }
+
+
+      return (
+        <div className="container">
+          <p>{number}</p>
+          <p><input
+            type="text"
+            name="number"
+            value={number}
+            onChange={handleChange}
+          /></p>
+          <p><button onClick={handleSave}>Enregistrer</button></p>
+          <p><button disabled={numbers.length == 0} onClick={handleShow}>Show numbers</button></p>
+          {status && (
+            <ul>
+              {numbers.map((number, i) => (
+                <li key={i}>{number}</li>
+              ))}
+            </ul>
+          )}
+        </div>
+      );
+    }
+
+    // Rendu final
+    const root = ReactDOM.createRoot(document.getElementById("root")); // 
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
