@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire – Création de compte (React)</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    /**
+     * EXERCICE — Formulaire de création de compte
+     *
+     * Objectif : créer un formulaire contrôlé (avec le state) permettant de créer un compte.
+     *
+     * 1) Créez un composant `App` avec un formulaire contenant au minimum :
+     *    - un champ "Nom" (text)
+     *    - un champ "Email" (email)
+     *    - un champ "Mot de passe" (password)
+     *    - un bouton "Créer mon compte"
+     *
+     * 2) Stockez les valeurs du formulaire dans le state (au choix) :
+     *    - soit un state par champ
+     *    - soit un seul objet `form` (recommandé)
+     *
+     * 3) Au submit :
+     *    - empêchez le rechargement de la page (preventDefault)
+     *    - validez les données :
+     *        - email non vide + format valide (simple vérification)
+     *        - mot de passe >= 8 caractères
+     *    - si une règle échoue, affichez un message d'erreur sous le formulaire
+     *
+     * 4) Si tout est OK :
+     *    - ajoutez le nouvel utilisateur dans un tableau `users` (state)
+     *    - videz le formulaire
+     *    - affichez un message de succès
+     *    - affichez la liste des comptes créés (sans afficher le mot de passe)
+     *
+     * Bonus :
+     * - désactiver le bouton si le formulaire est invalide
+     * - afficher les erreurs par champ
+     * - ajouter un bouton "Afficher/Masquer la liste"
+     */
+
+    // state global
+    const initialState = {
+      name: "",
+      email: "",
+      password: "",
+      message: "",
+      users: [] // toutes les personnes qu'on va inscrire 
+    }
+
+    function reducer(state, action) {
+      switch (action.type) {
+        case "name":
+          return { ...state, name: action.value, message : "" }
+
+        case "email":
+          return { ...state, email: action.value,  message : "" }
+
+        case "password":
+          return { ...state, password: action.value, message : "" }
+
+        case "add":
+          const serachUser = state.users.find(user => user.email == state.email);
+
+          if (serachUser) {
+
+            return {
+              ...state,
+              message: `Cet utilisateur ${state.name} existe déjà dans la base de données`
+            }
+          }
+
+          const newUser = { name: state.name, email: state.email, password: state.password };
+          const newUsers = [...state.users, newUser];
+
+          return {
+            ...state,
+            users: newUsers,
+            name: "",
+            email: "",
+            password: "",
+            message: "Le compte a bien été créer"
+          }
+
+        default:
+          return state
+      }
+    }
+
+
+    function App() {
+      const [state, dispatch] = React.useReducer(reducer, initialState);
+
+      const handleSubmit = e => {
+        e.preventDefault();
+
+        // const newUser = { name : state.name, email: state.email, password: state.password }
+
+        dispatch({ type: "add" })
+      }
+
+      const handleChangeName = e => {
+        const { value } = e.target;
+        if (value.trim() == "") return;
+
+        dispatch({ type: "name", value: value });
+      }
+
+      const handleChangeEmail = e => {
+        const { value } = e.target;
+        if (value.trim() == "") return;
+
+        dispatch({ type: "email", value: value });
+      }
+
+      const handleChangePassword = e => {
+        const { value } = e.target;
+        if (value.trim() == "") return;
+
+        dispatch({ type: "password", value: value });
+      }
+
+      return (
+        <div className="container">
+          <h1>Créer un compte</h1>
+          <p>À vous de jouer : implémentez le formulaire en suivant l'énoncé.</p>
+          {state.message && (<p style={{ color: "red" }}>{state.message}</p>)}
+          <div>
+            <form onSubmit={handleSubmit}>
+              <p><label >Name:
+                <input
+                  type="text"
+                  name="name"
+                  value={state.name}
+                  onChange={handleChangeName}
+                />
+              </label></p>
+              <p><label >Email:
+                <input
+                  type="text"
+                  name="name"
+                  value={state.email}
+                  onChange={handleChangeEmail}
+                />
+              </label></p>
+              <p><label >Password:
+                <input
+                  type="password"
+                  name="password"
+                  value={state.password}
+                  onChange={handleChangePassword}
+                />
+              </label></p>
+
+              <button>Créer le compte</button>
+            </form>
+          </div>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
