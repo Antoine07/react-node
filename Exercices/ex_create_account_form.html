@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Formulaire – Création de compte (React)</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    /**
+     * EXERCICE — Formulaire de création de compte
+     *
+     * Objectif : créer un formulaire contrôlé (avec le state) permettant de créer un compte.
+     *
+     * 1) Créez un composant `App` avec un formulaire contenant au minimum :
+     *    - un champ "Nom" (text)
+     *    - un champ "Email" (email)
+     *    - un champ "Mot de passe" (password)
+     *    - un champ "Confirmer mot de passe" (password)
+     *    - une checkbox "J'accepte les CGU"
+     *    - un bouton "Créer mon compte"
+     *
+     * 2) Stockez les valeurs du formulaire dans le state (au choix) :
+     *    - soit un state par champ
+     *    - soit un seul objet `form` (recommandé)
+     *
+     * 3) Au submit :
+     *    - empêchez le rechargement de la page (preventDefault)
+     *    - validez les données :
+     *        - email non vide + format valide (simple vérification)
+     *        - mot de passe >= 8 caractères
+     *        - mot de passe === confirmation
+     *        - CGU cochées
+     *    - si une règle échoue, affichez un message d'erreur sous le formulaire
+     *
+     * 4) Si tout est OK :
+     *    - ajoutez le nouvel utilisateur dans un tableau `users` (state)
+     *    - videz le formulaire
+     *    - affichez un message de succès
+     *    - affichez la liste des comptes créés (sans afficher le mot de passe)
+     *
+     * Bonus :
+     * - désactiver le bouton si le formulaire est invalide
+     * - afficher les erreurs par champ
+     * - ajouter un bouton "Afficher/Masquer la liste"
+     */
+
+    function App() {
+      return (
+        <div className="container">
+          <h1>Créer un compte</h1>
+          <p>À vous de jouer : implémentez le formulaire en suivant l'énoncé.</p>
+        </div>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
+
