@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Composition de composants – React</title>
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 10px 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+
+    const employees = [
+      { id: 1, name: "Alice Martin", role: "Product Manager", salary: 52000 },
+      { id: 2, name: "Nassim Diallo", role: "Développeur Front", salary: 45000 },
+      { id: 3, name: "Chloé Bernard", role: "Développeuse Back", salary: 48000 },
+      { id: 4, name: "Mehdi Benali", role: "Data Analyst", salary: 47000 },
+      { id: 5, name: "Sarah Dupont", role: "UX/UI Designer", salary: 42000 },
+      { id: 6, name: "Léa Moreau", role: "QA Engineer", salary: 41000 },
+      { id: 7, name: "Thomas Leroy", role: "DevOps", salary: 55000 },
+      { id: 8, name: "Inès Haddad", role: "Scrum Master", salary: 50000 },
+      { id: 9, name: "Julien Fontaine", role: "Développeur Fullstack", salary: 51000 },
+      { id: 10, name: "Camille Robert", role: "HR Business Partner", salary: 46000 },
+    ];
+
+    //  Afficher une liste d'employés (nom, poste, salaire).
+    // Toggle mode confidentiel on / off pour afficher le salaire de chaque employé
+    function App() {
+
+    }
+    // Rendu final
+    const root = ReactDOM.createRoot(document.getElementById("root")); // 
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
