@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste d'étudiants – React</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Liste d'étudiants</h1>
+    <div id="root"></div>
+
+    <script type="text/babel">
+
+        function App() {
+            const [isActive, setIsActive] = React.useState(false); // valeur par défaut false <=> inactif
+            const [count, setCount] = React.useState(0);
+
+            React.useEffect(() => {
+                setCount(count + 1);
+            }, [isActive]); // quand isActive change on fait quelque chose, ici setCount( count +1 )
+
+            const handleClick = e => {
+                setIsActive(!isActive);
+            }
+
+            return (
+                <div>
+                    <p>State : {isActive ? "actif" : "inactif"} </p>
+                    <p>Nombre d'exécution : {count} </p>
+                    <button onClick={handleClick}>
+                        Toggle
+                    </button>
+                </div>
+            )
+        }
+
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>
