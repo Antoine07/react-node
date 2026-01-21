@@ -17,4 +17,4 @@ const RootLayout = () => (
   </>
 )
 
-export const Route = createRootRoute({ component })
+export const Route = createRootRoute({ component: RootLayout })

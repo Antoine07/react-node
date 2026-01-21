@@ -1,4 +1,3 @@
-import './App.css';
 import { employees } from './data/employee';
 import Employee from './components/Employee';
 
