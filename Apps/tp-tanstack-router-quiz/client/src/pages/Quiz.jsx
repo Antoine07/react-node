@@ -17,7 +17,7 @@ export default function Quiz() {
 
   return (
     <section title="Liste des quiz">
-        {questions.map(q => <QuizCard key={q.id} title={q.title} choices={q.choices} /> )}
+        {questions.map(q => <QuizCard key={q.id} title={q.title} choices={q.choices} answerIndex={q.answerIndex}/> )}
     </section>
   )
 }
