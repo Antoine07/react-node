@@ -1,0 +1,11 @@
+{
+  "name": "tp-tanstack-router-quiz-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "hello" : "hello les étudiants"
+  }
+}
+
