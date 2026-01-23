@@ -4,6 +4,8 @@
 
 Créer une mini app React en **JSX (pas de TypeScript)**, stylée avec **Tailwind CSS**, qui consomme une **API Node.js** pour gérer une ressource `task` (CRUD).
 
+Seul est demandé l'affichage du kanban donc seulement `read` dans le CRUD ( create / read / update / delete )
+
 À la fin, vous devez avoir un **board Kanban** en 3 colonnes :
 
 - `todo`
@@ -35,10 +37,10 @@ API: `http://localhost:3001`
 
 - `GET /health`
 - `GET /api/tasks`
-- `POST /api/tasks`
+- `POST /api/tasks`  -- facultative 
 - `GET /api/tasks/:id`
-- `PATCH /api/tasks/:id`
-- `DELETE /api/tasks/:id`
+- `PATCH /api/tasks/:id` -- facultative 
+- `DELETE /api/tasks/:id` -- facultative 
 
 ### 2) Créer le client React
 
@@ -150,7 +152,7 @@ curl -s 'http://localhost:3001/api/tasks?q=tailwind&limit=5'
 curl -s 'http://localhost:3001/api/tasks/1'
 ```
 
-#### `POST /api/tasks`
+#### `POST /api/tasks`   -- facultative  
 
 Crée une task.
 
@@ -176,7 +178,7 @@ curl -i -X POST 'http://localhost:3001/api/tasks' \
   -d '{"title":"Lire la doc API","description":"Tester avec curl","status":"todo"}'
 ```
 
-#### `PATCH /api/tasks/:id`
+#### `PATCH /api/tasks/:id`  -- facultative  
 
 Met à jour une task (partiel).
 
@@ -197,7 +199,7 @@ curl -i -X PATCH 'http://localhost:3001/api/tasks/1' \
   -d '{"status":"done"}'
 ```
 
-#### `DELETE /api/tasks/:id`
+#### `DELETE /api/tasks/:id`  -- facultative 
 
 - `204`: supprimée
 
@@ -223,7 +225,7 @@ CORS_ORIGIN=http://localhost:5173,http://localhost:5174 npm run dev
 ### A. API (prise en main)
 
 - [ ] Lancer le serveur et tester `GET /health`
-- [ ] Tester les routes `GET/POST/PATCH/DELETE` avec `curl`
+- [ ] Tester les routes `GET/POST/PATCH/DELETE` avec `curl` -- facultative  
 - [ ] Comprendre le format des erreurs (et afficher ces erreurs côté UI)
 
 ### B. Client React + Tailwind (fonctionnel)
@@ -231,9 +233,9 @@ CORS_ORIGIN=http://localhost:5173,http://localhost:5174 npm run dev
 - [ ] Installer Tailwind et vérifier qu’il fonctionne
 - [ ] Créer une page “board” en 3 colonnes (`todo/doing/done`)
 - [ ] Afficher les tasks depuis `GET /api/tasks`
-- [ ] Ajouter une task (`POST /api/tasks`)
-- [ ] Modifier le statut d’une task (`PATCH /api/tasks/:id`)
-- [ ] Supprimer une task (`DELETE /api/tasks/:id`)
+- [ ] Ajouter une task (`POST /api/tasks`) -- facultative 
+- [ ] Modifier le statut d’une task (`PATCH /api/tasks/:id`) -- facultative 
+- [ ] Supprimer une task (`DELETE /api/tasks/:id`) -- facultative 
 - [ ] Gérer au minimum : loading, erreurs, état vide
 
 ### C. UI / UX (attendus)
@@ -242,11 +244,4 @@ CORS_ORIGIN=http://localhost:5173,http://localhost:5174 npm run dev
 - [ ] Composants simples et réutilisables (ex: `TaskCard`, `Column`, `Button`, `Input`)
 - [ ] Boutons désactivés pendant une requête (éviter le spam)
 - [ ] Message d’erreur clair (pas un simple `console.log`)
-
-## Bonus (optionnel)
-
-- Filtre `q` (recherche) et `status` (select) branchés sur `GET /api/tasks?q=...`
-- Dark mode (Tailwind `dark:`) + toggle
-- “Move” rapide : bouton “→” pour passer `todo → doing → done`
-- Optimistic UI (mise à jour immédiate + rollback si erreur)
 
